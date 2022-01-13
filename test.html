@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .big-text {
+            color: red;
+            font-style: italic;
+        }
+
+        .nice-text {
+            background-color: yellow;
+        }
+
+        #my-name {
+            color: blue;
+            font-size: 40px;
+        }
+
+        .clickable {
+            cursor: pointer;
+        }
+    </style>
+
+    <script>
+        function onClick() {
+            alert('I was clicked')
+        }
+    </script>
+</head>
+
+<body>
+    <h1 class="big-text nice-text">Title of this page</h1>
+
+    <h2 class="nice-text">Slightly smaller</h2>
+
+    <h3 id="my-name">Even smaller</h3>
+
+    <h6 class="clickable" onclick="onClick()">This is the smallest header tag</h6>
+
+    <p>This is just some plain text</p>
+
+    <ol>
+        <li>This is item number one</li>
+        <li>This is item number two</li>
+        <li>This is the last item</li>
+    </ol>
+
+    <input type="text" />
+    <input type="number" />
+    <textarea>
+        This is some default text
+    </textarea>
+</body>
+
+</html>
