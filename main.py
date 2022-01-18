@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request, render_template, jsonify
 import requests
 from bs4 import BeautifulSoup
 
@@ -11,7 +11,7 @@ headers = {
 
 @app.route("/")
 def serve_home_page():
-    return "<h1>Hello there</h1>"
+    return render_template("index.html")
 
 
 @app.route("/about")
@@ -27,7 +27,7 @@ def serve_about_page():
 
 @app.route("/movie", methods=["POST"])
 def get_movie_data():
-    movie_url = request.form["movie_url"]
+    movie_url = request.json["movie_url"]
     data = requests.get(
         movie_url,
         headers=headers,
@@ -55,7 +55,7 @@ def get_movie_data():
                 if star_name != "" and star_name != "Stars":
                     star_names.append(star_name)
             info["stars"] = star_names
-    return info
+    return jsonify(info)
 
 
 app.run("0.0.0.0", port=5000, debug=True)
